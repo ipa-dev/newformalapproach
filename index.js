@@ -1,8 +1,8 @@
 var keystone = require('keystone');
 
 keystone.init({
-  'cookie secret': 'secure string goes here',
-  'name': 'my-project',
+  'cookie secret': '6D61822FBEAED8635A4A52241FEC3',
+  'name': 'Formal Approach',
   'user model': 'User',
   'auto update': true,
   'auth': true,

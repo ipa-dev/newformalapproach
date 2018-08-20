@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+// We will need to import this from redux to create our store and make use of the thunk
+import { createStore, applyMiddleware } from 'redux';
+// Dont forget to import redux thunk
+import thunk from 'redux-thunk';
+// Getting our combined reducers
+import reducers from './reducers/reducers';
+// And our Recipe component
+import FeatureCategory from './containers/FeatureCategory';
+
+const store = createStore(reducers, applyMiddleware(thunk));
+
 
 // This will be the entry point of our app
 const App = () => {
   return (
     // We will add our components here
-    <div />
+    <div>
+      <FeatureCategory />
+    </div>
   );
 };
 
