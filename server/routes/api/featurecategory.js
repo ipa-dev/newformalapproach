@@ -15,7 +15,7 @@ exports.list = function (req, res) {
     if (err) return res.apiError('database error', err);
     res.apiResponse({
       // Filter featureCategory by
-      featurecategory: items,
+      featureCategories: items,
     });
 
   // Using express req.query we can limit the number of recipes returned by setting a limit property in the link

@@ -25,7 +25,7 @@ const App = () => {
 
 ReactDOM.render(
   // We need to wrap our app in provider to make use of redux
-  <Provider>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.querySelector('.react-container'));

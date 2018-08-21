@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // Remember our thunk this is where we will need to make use of it
-import { featureCategoryFetchData } from '../actions/actions.js';
+import { featureCategoriesFetchData } from '../actions/actions.js';
 // We gonna use lodash to map over our recipe object
 import _ from 'lodash';
 
@@ -54,7 +54,6 @@ class FeatureCategory extends Component {
 };
 
 function mapStateToProps(state, ownProps) {
-  // Things return here are showing in props for Recepie
   return {
     featureCategories: state.featureCategories,
     loading: state.loadFeatureCategories,
@@ -63,8 +62,7 @@ function mapStateToProps(state, ownProps) {
 
 // anything returned from here will end up in the props
 const mapDispatchToProps = dispatch => ({
-  // Our thunk will be mapped to this.props.fetchRecipe
-  fetchRecipe: (url) => dispatch(recipesFetchData(url)),
+  fetchFeatureCategories: (url) => dispatch(featureCategoriesFetchData(url)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeatureCategory);
