@@ -9,6 +9,8 @@ import thunk from 'redux-thunk';
 import reducers from './reducers/reducers';
 // And our Recipe component
 import FeatureCategory from './containers/FeatureCategory';
+import NavBarContainer from './containers/NavBarContainer';
+import './scss/style.scss';
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
@@ -18,6 +20,7 @@ const App = () => {
   return (
     // We will add our components here
     <div>
+      <NavBarContainer />
       <FeatureCategory />
     </div>
   );
