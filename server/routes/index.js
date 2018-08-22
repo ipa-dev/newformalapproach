@@ -11,7 +11,7 @@ var routes = {
 exports = module.exports = function (app) {
     // Get access to the API route in our app
     app.get('/api/featurecategory/', keystone.middleware.api, routes.api.featurecategory.list);
-    // Set up the default app route to  http://localhost:3000/index.html
+    app.get('/api/headermessage/', keystone.middleware.api, routes.api.headermessage.list);
     app.get('/index.html', function (req, res) {
     // Render some simple boilerplate html
     function renderFullPage() {

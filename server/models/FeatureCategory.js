@@ -4,7 +4,6 @@ const path = require('path');
 
 const FeatureCategory = new keystone.List('Feature Category', {
   autokey: { path: 'slug', from: 'name', unique: true },
-  defaultSort: '-createdAt',
 });
 
 const featureCategoryImgStorage = new keystone.Storage({

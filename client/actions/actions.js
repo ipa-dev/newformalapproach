@@ -3,8 +3,11 @@ import axios from 'axios';
 // Exporting our actions
 export const LOADING_FEATURE_CATEGORIES = 'LOADING_FEATURE_CATEGORIES';
 export const GET_FEATURE_CATEGORIES = 'GET_FEATURE_CATEGORIES';
+export const LOADING_HEADER_MESSAGE = 'LOADING_HEADER_MESSAGE';
+export const GET_HEADER_MESSAGE = 'GET_HEADER_MESSAGE';
 
-// An action to check if the recipes are loaded accepts true or false
+
+//FEATURE CATEGORIES
 export function loadingFeatureCategories(loading) {
   return {
     type: LOADING_FEATURE_CATEGORIES,
@@ -12,7 +15,6 @@ export function loadingFeatureCategories(loading) {
   };
 }
 
-// This will get the recipes from the API
 export function fetchFeatureCategories(data) {
   return {
     type: GET_FEATURE_CATEGORIES,
@@ -20,13 +22,37 @@ export function fetchFeatureCategories(data) {
   };
 }
 
-// This is a redux thunk that will fetch our model data
 export function featureCategoriesFetchData(url) {
   return (dispatch) => {
     const request = axios.get(url);
     request.then((response) => {
       dispatch(loadingFeatureCategories(false));
       dispatch(fetchFeatureCategories(response.data.featureCategories));
+    });
+  };
+}
+
+//HEADER MESSAGE
+export function loadingHeaderMessage(loading) {
+  return {
+    type: LOADING_HEADER_MESSAGE,
+    payload: loading,
+  };
+}
+
+export function fetchHeaderMessage(data) {
+  return {
+    type: GET_HEADER_MESSAGE,
+    payload: data,
+  };
+}
+
+export function headerMessageFetchData(url) {
+  return (dispatch) => {
+    const request = axios.get(url);
+    request.then((response) => {
+      dispatch(loadingHeaderMessage(false));
+      dispatch(fetchHeaderMessage(response.data.headerMessages));
     });
   };
 }
